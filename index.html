@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - Dark Mode</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>BMI Calculator</h1>
+    <form id="bmiForm">
+        <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" class="form-control" id="age" placeholder="Enter your age" min="2" max="110" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Gender</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="Male" checked>
+                <label class="form-check-label text-light" for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                <label class="form-check-label text-light" for="female">Female</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="height" class="form-label">Height (cm)</label>
+            <input type="number" class="form-control" id="height" placeholder="Enter your height" required>
+        </div>
+        <div class="mb-3">
+            <label for="weight" class="form-label">Weight (kg)</label>
+            <input type="number" class="form-control" id="weight" placeholder="Enter your weight" required>
+        </div>
+        <div class="d-flex flex-wrap justify-content-between">
+            <button type="button" class="btn btn-primary" onclick="calculateBMI()">Calculate</button>
+            <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear</button>
+        </div>
+    </form>
+    <div class="result-box mt-4 text-center" id="resultBox">
+        <h4>Result</h4>
+        <p id="bmiResult">BMI = <span id="bmiValue">--</span> (<span id="bmiCategory">--</span>)</p>
+        <ul class="list-unstyled">
+            <li>Healthy BMI range: 18.5 kg/m² - 25 kg/m²</li>
+            <li id="healthyWeight">Healthy weight range: -- kg</li>
+            <li>BMI Prime: <span id="bmiPrime">--</span></li>
+            <li>Ponderal Index: <span id="ponderalIndex">--</span> kg/m³</li>
+        </ul>
+        <div class="bmi-gauge">
+            <div class="gauge">
+                <div class="needle" id="bmiNeedle"></div>
+            </div>
+            <!-- <div class="labels">
+                <span>16</span>
+                <span>18.5</span>
+                <span>25</span>
+                <span>30</span>
+                <span>40</span>
+            </div> -->
+            <div class="bmi-label">BMI Gauge</div>
+        </div>
+    </div>
+</div>
+<script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
